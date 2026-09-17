@@ -1,0 +1,12 @@
+{
+  "name": "releaf-book",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Second-hand book buying and selling website (static HTML/CSS/JS)",
+  "scripts": {
+   "test": "node --test"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.0"
+  }
+}
