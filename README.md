@@ -4,7 +4,7 @@
 
 | Roll No. | Name | GitHub username |
 |---|---|---|
-| 24ESKCS101 | Chitranshi Modi | chitra121-i |
+| 24ESKCS077 | Ayush Pilania | AyushPilania |
 
 ## About
 
