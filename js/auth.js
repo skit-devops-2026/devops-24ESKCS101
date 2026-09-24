@@ -34,7 +34,7 @@ if (registerForm) {
 
 
         message.textContent =
-            "Registration details are valid.";
+            "Registration is valid.";
 
     });
 
