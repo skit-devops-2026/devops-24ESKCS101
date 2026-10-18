@@ -96,16 +96,28 @@ Jenkins pipeline setup and stages will be documented here once implemented (M4).
 
 ## Deployment
 
-Not yet implemented. Planned for MT2 (M5), including containerization with Docker.
+Releaf-Book is containerized with an nginx image (`Dockerfile`, `nginx.conf`). The GitHub Actions `docker` job builds the image on every push to `main` and pushes it to `ghcr.io/skit-devops-2026/devops-24eskcs101`. The same Dockerfile is deployed on Render as a web service (`PORT=80`, health check `/health`).
+
+Run locally with Docker:
+
+```powershell
+docker compose up --build -d
+```
 
 ## Kubernetes
 
-Not yet implemented. Planned for MT2 (M6).
+Manifests are in `k8s/`: a Deployment (2 replicas of the GHCR image, readiness probe on `/health`) and a NodePort Service. Run on a local kind cluster:
+
+```powershell
+kind create cluster --name releaf
+kubectl apply -f k8s/
+kubectl get pods
+```
 
 ## Monitoring
 
-Not yet implemented. Planned for MT2 (M6).
+`docker-compose.yml` also starts an nginx Prometheus exporter, Prometheus (`monitoring/prometheus.yml`) and Grafana with a provisioned dashboard (`monitoring/releaf-dashboard.json`). It monitors whether nginx is up, requests per second, and active connections. Grafana is at http://localhost:3000 and Prometheus at http://localhost:9090.
 
 ## Live URL
 
-Not yet deployed. Will be added once M5 is complete.
+YOUR_RENDER_URL
