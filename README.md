@@ -119,5 +119,4 @@ kubectl get pods
 `docker-compose.yml` also starts an nginx Prometheus exporter, Prometheus (`monitoring/prometheus.yml`) and Grafana with a provisioned dashboard (`monitoring/releaf-dashboard.json`). It monitors whether nginx is up, requests per second, and active connections. Grafana is at http://localhost:3000 and Prometheus at http://localhost:9090.
 
 ## Live URL
-
-YOUR_RENDER_URL
+https://devops-24eskcs101.onrender.com/
