@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
 import Landing from './pages/Landing.jsx';
 
 export default function App() {
