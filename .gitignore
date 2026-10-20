@@ -1,20 +1,16 @@
-@"
-# Dependencies (kept in case any tooling is added later, e.g. a test runner)
+# dependencies
 node_modules/
 
-# Environment and secrets
+# secrets - never upload your real .env file
 .env
-.env.*
-*.pem
-*.key
 
-# Editor and OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+# build output
+dist/
 
-# Logs
+# uploaded and sample book pictures (the folder itself is kept)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# other
 *.log
-npm-debug.log*
-"@ | Set-Content .gitignore -Encoding UTF8
+.DS_Store
