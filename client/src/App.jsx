@@ -1,13 +1,31 @@
 
+import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "./css/global.css";
 
 function App() {
+    const [user, setUser] = useState(
+        () => JSON.parse(sessionStorage.getItem("user")) || null
+    );
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Index />} />
+
+                <Route
+                    path="/login"
+                    element={<Login setUser={setUser} />}
+                />
+
+                <Route
+                    path="/register"
+                    element={<Register setUser={setUser} />}
+                />
+
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
