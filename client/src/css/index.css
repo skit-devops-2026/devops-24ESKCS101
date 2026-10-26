@@ -1,0 +1,467 @@
+/* =====================================================
+   RELEAF-BOOK - HOME PAGE
+   ===================================================== */
+
+/* ================= HOME HERO ================= */
+
+.index-page .home-hero {
+    min-height: 570px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    background:
+        linear-gradient(
+            120deg,
+            #fff3e6,
+            #fffaf5
+        );
+    overflow: hidden;
+}
+
+/* Hero text */
+
+.index-page .hero-content {
+    max-width: 620px;
+    animation: fadeIn 0.8s ease;
+}
+
+.index-page .small-heading {
+    color: #d96b27;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.index-page .hero-content h1 {
+    font-size: 55px;
+    line-height: 1.08;
+    margin: 15px 0;
+    color: #302820;
+}
+
+.index-page .hero-content h1 span {
+    color: #d96b27;
+    position: relative;
+}
+
+/* Small underline below "Second Life" */
+
+.index-page .hero-content h1 span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #e99a65;
+    border-radius: 10px;
+}
+
+.index-page .hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #665c54;
+    max-width: 550px;
+    margin-top: 20px;
+}
+
+/* Hero buttons */
+
+.index-page .hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.index-page .hero-buttons a {
+    transition: all 0.3s ease;
+}
+
+/* Orange button hover */
+
+.index-page .hero-buttons a:first-child:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(217, 107, 39, 0.25);
+}
+
+/* Explore / Login button (was a Tailwind button in the original) */
+
+.index-page .explore-btn {
+    display: inline-block;
+    background-color: #f97316;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.index-page .explore-btn:hover {
+    background-color: #ea580c;
+}
+
+/* Secondary button */
+
+.index-page .secondary-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #d96b27;
+    text-decoration: none;
+    padding: 11px 24px;
+    border-radius: 7px;
+    border: 1px solid #d96b27;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.index-page .secondary-btn:hover {
+    background-color: #d96b27;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(217, 107, 39, 0.2);
+}
+
+/* ================= HERO IMAGE ================= */
+
+.index-page .hero-image {
+    width: 430px;
+    position: relative;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.index-page .hero-image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow:
+        0 20px 45px rgba(70, 40, 20, 0.18);
+    transition: transform 0.4s ease;
+}
+
+.index-page .hero-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Floating message */
+
+.index-page .image-tag {
+    position: absolute;
+    bottom: -22px;
+    left: -30px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    font-size: 14px;
+    max-width: 220px;
+}
+
+/* ================= ABOUT SECTION ================= */
+
+.index-page .about-section {
+    padding: 90px 8%;
+    background-color: #faf7f2;
+}
+
+.index-page .about-box {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background-color: white;
+    border-radius: 18px;
+    border: 1px solid #eee;
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.index-page .about-box:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+.index-page .about-content h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 12px 0 20px;
+    color: #302820;
+}
+
+.index-page .about-content h2 span {
+    color: #d96b27;
+}
+
+.index-page .about-text {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.index-page .about-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 23px;
+    background-color: #d96b27;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.index-page .about-btn:hover {
+    background-color: #bd591c;
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 18px rgba(217, 107, 39, 0.25);
+}
+
+/* About image */
+
+.index-page .about-image {
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.index-page .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.index-page .about-image:hover img {
+    transform: scale(1.06);
+}
+
+/* ================= SECTION TITLE ================= */
+
+.index-page .section-title {
+    text-align: center;
+    font-size: 30px;
+    color: #3b3028;
+    margin-bottom: 40px;
+}
+
+
+/* ================= WHY SECTION ================= */
+
+.index-page .why-section {
+    padding: 85px 8%;
+    background-color: white;
+    text-align: center;
+}
+
+.index-page .why-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.index-page .why-card {
+    width: 220px;
+    min-height: 210px;
+    padding: 30px 22px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    background-color: #fffaf5;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.index-page .why-card:hover {
+    transform: translateY(-8px);
+    border-color: #e6a173;
+    box-shadow:
+        0 12px 25px rgba(70, 40, 20, 0.10);
+}
+
+.index-page .feature-icon {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff0e2;
+    border-radius: 50%;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.index-page .why-card:hover .feature-icon {
+    transform: scale(1.12) rotate(5deg);
+}
+
+.index-page .why-card h3 {
+    color: #3b3028;
+    margin: 18px 0 10px;
+}
+
+.index-page .why-card p {
+    color: #777;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Book image */
+
+/* ================= HOW IT WORKS ================= */
+
+.index-page .how-section {
+    padding: 85px 8%;
+    background-color: white;
+    text-align: center;
+}
+
+.index-page .steps {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.index-page .step {
+    flex: 1;
+    padding: 32px 25px;
+    background-color: #fff3e6;
+    border: 1px solid #f1d6c1;
+    border-radius: 14px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.index-page .step:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 12px 25px rgba(70, 40, 20, 0.10);
+}
+
+.index-page .step-number {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #d96b27;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.index-page .step:hover .step-number {
+    transform: scale(1.12);
+}
+
+.index-page .step h3 {
+    color: #3b3028;
+    margin-top: 18px;
+}
+
+.index-page .step p {
+    color: #777;
+    line-height: 1.6;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+    .index-page .home-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .index-page .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .index-page .hero-description {
+        margin: auto;
+    }
+
+    .index-page .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .index-page .hero-image {
+        width: 90%;
+        max-width: 420px;
+    }
+
+    .index-page .about-box {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .index-page .about-content {
+        text-align: center;
+    }
+
+    .index-page .about-image {
+        height: 270px;
+    }
+
+    .index-page .steps {
+        flex-direction: column;
+    }
+}
