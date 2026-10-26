@@ -1,0 +1,91 @@
+/* IndexHeader (navbar of the index page) */
+
+.index-navbar {
+    background-color: white;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.index-navbar .logo {
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+    color: #d96b27;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.index-navbar .logo:hover {
+    transform: scale(1.03);
+}
+
+.index-navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.index-navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.index-navbar .nav-links a:not(.login-btn):not(.register-btn)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #d96b27;
+    transition: width 0.3s ease;
+}
+
+.index-navbar .nav-links a:not(.login-btn):not(.register-btn):hover::after {
+    width: 100%;
+}
+
+.index-navbar .nav-links a:hover {
+    color: #d96b27;
+}
+
+.index-navbar .login-btn {
+    background-color: #d96b27;
+    color: white !important;
+    padding: 9px 18px;
+    border-radius: 6px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.index-navbar .login-btn:hover {
+    background-color: #bd591c;
+    transform: translateY(-2px);
+}
+
+.index-navbar .register-btn {
+    color: #d96b27 !important;
+    border: 1px solid #d96b27;
+    padding: 8px 17px;
+    border-radius: 6px;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.index-navbar .register-btn:hover {
+    background-color: #d96b27;
+    color: white !important;
+    transform: translateY(-2px);
+}
