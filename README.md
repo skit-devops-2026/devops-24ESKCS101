@@ -1,140 +1,122 @@
-# 📚 ReleafBook
+# Releaf-Book — DevOps Project
 
-A very simple MERN stack website to buy and sell second-hand books.
-Built from the original Releaf-Book HTML/CSS frontend.
+## Author
 
-| Part      | Technology                                  |
-|-----------|---------------------------------------------|
-| Database  | MongoDB (local, viewed with MongoDB Compass) |
-| Backend   | Node.js + Express + Mongoose (+ Multer for pictures) |
-| Frontend  | React (Vite) + React Router + Axios         |
+| Roll No. | Name | GitHub username |
+|---|---|---|
+| 24ESKCS101 | Chitranshi Modi | Chitra121-i |
 
----
+## About
 
-## Folder structure
+Releaf-Book is a second-hand book buying and selling website, originally built as a
+Full Stack Development group project. It lets users register, log in, list books for
+sale, buy books from other users, track bought and sold items, maintain a wishlist,
+and chat with other users. This repository is the individual DevOps project built on
+top of that application: the application code is shared with my FSD teammates, but all
+versioning, CI/CD, containerization, deployment, and monitoring work in this repository
+is my own.
+
+## Features
+
+- User registration and login
+- Book listing (sell a book)
+- Buying books from other listings
+- Bought books and sold books tracking
+- Wishlist
+- In-app chat between users
+- Book browsing with images and details
+
+## Tech stack
+
+- Frontend: HTML, CSS, JavaScript (static, no framework)
+- Backend: None — Releaf-Book is a static site; all logic runs client-side in the browser
+- Database: None currently used
+
+## Project structure
 
 ```
-ReleafBook/
-├── server/                    <- BACKEND
-│   ├── server.js              starts Express and connects to MongoDB
-│   ├── .env                   PORT and MONGO_URI
-│   ├── models/
-│   │   ├── User.js            username, email, password
-│   │   └── Book.js            title, author, price, contact, image, seller, status
-│   ├── routes/
-│   │   ├── auth.js            register + login
-│   │   └── books.js           list, update, mark sold, delete, fetch
-│   └── uploads/               uploaded book pictures are saved here
-│
-└── client/                    <- FRONTEND
-    ├── index.html
-    ├── vite.config.js         forwards /api and /uploads to the server
-    ├── public/images/         hero-books.jpg, about-books.jpg
-    └── src/
-        ├── main.jsx
-        ├── App.jsx            routes + login protection
-        ├── components/
-        │   ├── IndexHeader.jsx   header of the index page
-        │   ├── IndexFooter.jsx   footer of the index page
-        │   ├── Header.jsx        header of home / sell / profile
-        │   └── Footer.jsx        footer of home / sell / profile
-        ├── pages/
-        │   ├── Index.jsx      landing page (about + Login / Register)
-        │   ├── Login.jsx      no header / footer
-        │   ├── Register.jsx   no header / footer
-        │   ├── Home.jsx       all books for sale + search
-        │   ├── Sell.jsx       list a new book
-        │   └── Profile.jsx    statistics + edit / sold / delete
-        └── css/               your original CSS, one file per page
+css/                Stylesheets, one per page
+images/              Book cover images and static assets
+js/                  Page-specific JavaScript
+index.html           Landing page
+home.html            Home / browse page
+login.html           Login page
+register.html        Registration page
+sell.html            List a book for sale
+listing.html         Book listing detail
+bought.html          Bought books page
+sold.html            Sold books page
+wishlist.html        Wishlist page
+chat.html            Chat page
+.github/workflows/   CI pipeline definitions
+scripts/             Helper scripts (repository hygiene check)
+docs/                Project documentation (added as needed)
+monitoring/          Monitoring configuration (added in MT2)
+k8s/                 Kubernetes manifests (added in MT2)
 ```
 
-## How to run
+## How to run locally
 
-You need **two terminals**. MongoDB must be running first (it starts automatically
-as a Windows service if you installed it with MongoDB Compass).
+Releaf-Book is a static site with no build step or server dependency. Open
+`index.html` directly in a browser, or serve the folder with any static file server,
+for example:
 
-**Terminal 1 - backend**
+```powershell
+npx serve .
 ```
-cd server
-npm install
-npm run dev
+
+Then visit the local address it prints (typically `http://localhost:3000`).
+
+## DevOps tools
+
+| Tool | Purpose | Status |
+|---|---|---|
+| Git / GitHub | Version control, branching, pull requests | In progress (M1, M2) |
+| GitHub Actions | CI pipeline, automated tests, repository hygiene checks | In progress (M3) |
+| Jenkins | Local build pipeline | In progress (M4) |
+| Docker | Containerization | Planned (M5, MT2) |
+| Kubernetes | Deployment | Planned (M6, MT2) |
+| Monitoring | Metrics / observability | Planned (M6, MT2) |
+
+## CI
+
+A GitHub Actions workflow at `.github/workflows/ci.yml` runs on every push and pull
+request. It currently runs a repository hygiene check (`scripts/hygiene.sh`) that
+verifies the README is filled in, `.gitignore` is present, no build artifacts or
+secrets are tracked, and commit messages are reasonably descriptive. The
+build-and-test job will be added once the test suite (below) is in place.
+
+## Testing
+
+Test strategy and test files will be documented here once implemented (M3).
+
+## Jenkins
+
+Jenkins pipeline setup and stages will be documented here once implemented (M4).
+
+## Deployment
+
+Releaf-Book is containerized with an nginx image (`Dockerfile`, `nginx.conf`). The GitHub Actions `docker` job builds the image on every push to `main` and pushes it to `ghcr.io/skit-devops-2026/devops-24eskcs101`. The same Dockerfile is deployed on Render as a web service (`PORT=80`, health check `/health`).
+
+Run locally with Docker:
+
+```powershell
+docker compose up --build -d
 ```
-You should see `MongoDB connected` and `Server running on http://localhost:5000`.
 
-**Terminal 2 - frontend**
+## Kubernetes
+
+Manifests are in `k8s/`: a Deployment (2 replicas of the GHCR image, readiness probe on `/health`) and a NodePort Service. Run on a local kind cluster:
+
+```powershell
+kind create cluster --name releaf
+kubectl apply -f k8s/
+kubectl get pods
 ```
-cd client
-npm install
-npm run dev
-```
-Open **http://localhost:5173** in the browser.
 
-In MongoDB Compass connect to `mongodb://127.0.0.1:27017`, and the database
-`releafbook` (with `users` and `books` collections) appears after the first
-registration.
+## Monitoring
 
----
+`docker-compose.yml` also starts an nginx Prometheus exporter, Prometheus (`monitoring/prometheus.yml`) and Grafana with a provisioned dashboard (`monitoring/releaf-dashboard.json`). It monitors whether nginx is up, requests per second, and active connections. Grafana is at http://localhost:3000 and Prometheus at http://localhost:9090.
 
-## How the website works
-
-**Pages**
-
-| URL         | Page      | Who can open it |
-|-------------|-----------|-----------------|
-| `/`         | Index     | everyone - the website always opens here |
-| `/login`    | Login     | everyone |
-| `/register` | Register  | everyone |
-| `/home`     | Home      | logged in users only (others go to `/login`) |
-| `/sell`     | Sell      | logged in users |
-| `/profile`  | Profile   | logged in users |
-
-**API (Express)**
-
-| Method | URL                         | What it does |
-|--------|-----------------------------|--------------|
-| POST   | `/api/auth/register`        | create a user |
-| POST   | `/api/auth/login`           | check email + password |
-| GET    | `/api/books`                | books for sale, newest first, with seller username |
-| GET    | `/api/books/user/:userId`   | every book of one user (used by the profile page) |
-| POST   | `/api/books`                | list a new book (form-data with picture) |
-| PUT    | `/api/books/:id`            | update a book (picture optional) |
-| PUT    | `/api/books/:id/sold`       | mark a book as sold |
-| DELETE | `/api/books/:id`            | remove a book from the listing |
-
-## Design decisions (and why)
-
-* **Login = a saved user object.** The server returns `{ _id, username, email }`,
-  React keeps it in `sessionStorage`: a refresh keeps the user logged in, but
-  closing the tab/browser logs him out, so every new visit starts on the index page.
-  `App.jsx` sends anyone without a login from `/home`, `/sell`, `/profile` to `/login`.
-  No JWT, no hashing and no OTP, exactly as requested to keep it simple.
-  Passwords are stored as plain text, which is **not safe for a real website**.
-* **Every book has a `status`** (`listed`, `sold`, `deleted`). Delete and Sold only
-  change the status, nothing is erased. That is how the profile page can count
-  "books deleted" and "books sold" and add up the profit.
-* **Profit** = sum of the asking prices of all books marked as sold.
-* **Home page** only shows books with status `listed`, sorted by `createdAt`
-  (newest first). It loads from the database every time the page is opened or
-  refreshed. Searching filters that list by book name inside React.
-* **The server checks the owner.** Update, Sold and Delete compare the book's
-  seller with the `userId` sent by the browser, so one user cannot change another
-  user's book.
-* **Pictures** are uploaded with Multer into `server/uploads` and only the path
-  (like `/uploads/1712345678.jpg`) is stored in MongoDB.
-* **Four components:** `IndexHeader`/`IndexFooter` (index page, your original index
-  navbar and footer) and `Header`/`Footer` (home, sell, profile, your original home
-  navbar and footer). Login and Register have neither.
-* **CSS** is your original CSS, split one file per page. Because React puts all
-  CSS in one page, each page file is wrapped in a class (`.index-page`,
-  `.home-page`, `.sell-page`, `.profile-page`) so rules from one page do not
-  change another page. Each component has its own CSS file, and `global.css` holds the body style.
-* **MongoDB address** is written as `127.0.0.1` instead of `localhost`. On newer
-  Node versions `localhost` can resolve to IPv6 and the connection fails.
-
-## Changes made to your original design
-
-* Removed: categories, ISBN, condition, description, wishlist, bought/sold pages,
-  details pop-up, multiple photos, Tailwind, "remember me", "forgot password",
-  confirm password, terms checkbox, the empty "Popular Books" section.
-* Name changed everywhere to **ReleafBook**.
-* Index hero buttons are now Login and Register.
+## Live URL
+https://devops-24eskcs101.onrender.com/

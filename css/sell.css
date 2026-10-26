@@ -1,0 +1,1191 @@
+/* ================= SELL SECTION ================= */
+
+.sell-section {
+
+    min-height: 650px;
+
+    padding: 70px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    background-color: #fff3e6;
+}
+
+
+/* ================= LEFT SIDE ================= */
+
+.sell-intro h1 {
+
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    color: #302820;
+
+    margin: 15px 0;
+}
+
+
+.sell-intro h1 span {
+
+    color: #d96b27;
+
+    display: block;
+}
+
+
+.sell-intro > p {
+
+    max-width: 520px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #665c54;
+}
+
+
+/* ================= BENEFITS ================= */
+
+.benefits {
+
+    margin-top: 30px;
+
+    max-width: 500px;
+}
+
+
+.benefit {
+
+    padding: 15px 18px;
+
+    margin: 10px 0;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    color: #4b4038;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.benefit:hover {
+
+    transform: translateX(5px);
+
+}
+
+
+/* ================= FORM ================= */
+
+.sell-form {
+
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+.sell-form h2 {
+
+    margin-top: 0;
+
+    font-size: 28px;
+
+    color: #302820;
+}
+
+
+.sell-form > p {
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= LABELS ================= */
+
+.sell-form label {
+
+    display: block;
+
+    margin-top: 16px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #3b3028;
+}
+
+
+/* ================= INPUTS ================= */
+
+.sell-form input,
+.sell-form select,
+.sell-form textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+}
+
+
+.sell-form input:focus,
+.sell-form select:focus,
+.sell-form textarea:focus {
+
+    outline: none;
+
+    border-color: #d96b27;
+}
+
+
+/* ================= BUTTON ================= */
+
+.sell-form button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #d96b27;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.sell-form button:hover {
+
+    background-color: #bd591c;
+
+}
+
+
+/* ================= HOW IT WORKS ================= */
+
+.selling-steps {
+
+    padding: 70px 8%;
+
+    text-align: center;
+
+    background-color: white;
+}
+
+
+.selling-steps h2 {
+
+    font-size: 32px;
+
+    color: #302820;
+
+    margin-bottom: 40px;
+}
+
+
+.steps-container {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.step {
+
+    padding: 30px;
+
+    background-color: #fffaf5;
+
+    border: 1px solid #eee;
+
+    border-radius: 10px;
+}
+
+
+.step-number {
+
+    width: 45px;
+
+    height: 45px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #d96b27;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+.step h3 {
+
+    color: #302820;
+
+    margin-top: 18px;
+}
+
+
+.step p {
+
+    color: #777;
+
+    line-height: 1.5;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 850px) {
+
+    .sell-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .steps-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .sell-intro h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .sell-form {
+
+        padding: 25px;
+
+    }
+
+}
+
+/* ================= IMAGE PREVIEW ================= */
+
+#image-preview {
+
+    display: none;
+
+    width: 180px;
+
+    height: 220px;
+
+    object-fit: contain;
+
+    margin-top: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    padding: 5px;
+
+    background-color: #fffaf5;
+}
+
+/* ================= MY LISTINGS ================= */
+
+.my-listings {
+
+    padding: 70px 8%;
+
+    background-color: #faf7f2;
+
+    text-align: center;
+}
+
+
+.my-listings h2 {
+
+    font-size: 32px;
+
+    color: #302820;
+
+    margin-bottom: 40px;
+}
+
+
+#listings-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    text-align: left;
+}
+
+
+/* ================= LISTING CARD ================= */
+
+.listing-card {
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #eee;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+.listing-card img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: contain;
+
+    background-color: #fff3e6;
+}
+
+
+.listing-details {
+
+    padding: 20px;
+}
+
+
+.listing-category {
+
+    color: #d96b27;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+
+.listing-details h3 {
+
+    color: #302820;
+
+    margin: 8px 0;
+}
+
+
+.listing-author {
+
+    color: #777;
+
+    margin: 5px 0;
+}
+
+
+.listing-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 18px;
+}
+
+
+.listing-price {
+
+    color: #d96b27;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+.listing-condition {
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 850px) {
+
+    #listings-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    #listings-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ================= SELL DASHBOARD ================= */
+
+.sell-dashboard {
+
+    padding: 60px 8%;
+
+    background-color: #faf7f2;
+
+    min-height: 650px;
+}
+
+
+/* ================= DASHBOARD HEADER ================= */
+
+.dashboard-header {
+
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.dashboard-header h1 {
+
+    margin: 8px 0;
+
+    font-size: 38px;
+
+    color: #302820;
+}
+
+
+.dashboard-header p:last-child {
+
+    color: #777;
+
+    margin: 0;
+}
+
+
+/* ================= LIST BOOK BUTTON ================= */
+
+.list-book-btn {
+
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #d96b27;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+.list-book-btn:hover {
+
+    background-color: #bd591c;
+
+}
+
+
+/* ================= LISTINGS ================= */
+
+#listings-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    text-align: left;
+}
+
+
+/* ================= SELL FORM CONTAINER ================= */
+
+.sell-form-container {
+
+    max-width: 700px;
+
+    margin: 40px auto 0;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    display: none;
+}
+
+
+/* ================= FORM HEADER ================= */
+
+.form-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+
+.form-header h2 {
+
+    margin: 8px 0;
+
+    color: #302820;
+
+    font-size: 28px;
+}
+
+
+.form-header p:last-child {
+
+    color: #777;
+
+    margin: 0;
+}
+
+
+.close-form-btn {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #f5f5f5;
+
+    color: #555;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+.close-form-btn:hover {
+
+    background-color: #eee;
+
+}
+
+
+/* ================= INPUT HELP ================= */
+
+.input-help {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* ================= EXISTING FORM ================= */
+
+.sell-form-container label {
+
+    display: block;
+
+    margin-top: 17px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #3b3028;
+}
+
+
+.sell-form-container input,
+.sell-form-container select,
+.sell-form-container textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+}
+
+
+.sell-form-container input:focus,
+.sell-form-container select:focus,
+.sell-form-container textarea:focus {
+
+    outline: none;
+
+    border-color: #d96b27;
+
+}
+
+
+/* ================= IMAGE PREVIEW ================= */
+
+#image-preview {
+
+    display: none;
+
+    width: 180px;
+
+    height: 220px;
+
+    object-fit: contain;
+
+    margin-top: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    padding: 5px;
+
+    background-color: #fffaf5;
+}
+
+
+/* ================= SUBMIT BUTTON ================= */
+
+.submit-book-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #d96b27;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.submit-book-btn:hover {
+
+    background-color: #bd591c;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 850px) {
+
+    .dashboard-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    #listings-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .sell-dashboard {
+
+        padding: 40px 5%;
+
+    }
+
+
+    .dashboard-header h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    #listings-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .sell-form-container {
+
+        padding: 25px;
+
+    }
+
+}
+
+/* ================= NO LISTINGS ================= */
+
+.no-listings {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    border: 1px solid #eee;
+}
+
+
+.no-listings h2 {
+
+    color: #302820;
+
+    margin-bottom: 10px;
+}
+
+
+.no-listings p {
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= LISTING ACTIONS ================= */
+
+.listing-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.edit-btn,
+.delete-btn {
+
+    flex: 1;
+
+    padding: 9px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.edit-btn {
+
+    border: 1px solid #d96b27;
+
+    background-color: white;
+
+    color: #d96b27;
+}
+
+
+.delete-btn {
+
+    border: 1px solid #ddd;
+
+    background-color: white;
+
+    color: #777;
+}
+
+
+.edit-btn:hover {
+
+    background-color: #d96b27;
+
+    color: white;
+}
+
+
+.delete-btn:hover {
+
+    background-color: #eee;
+}
+
+
+/* ================= ISBN ================= */
+
+.listing-isbn {
+
+    font-size: 13px;
+
+    color: #777;
+
+    margin: 6px 0;
+}
+
+
+/* ================= STATUS ================= */
+
+.listing-status {
+
+    font-weight: bold;
+
+    margin-top: 12px;
+}
+
+/* ================= PHOTO COUNT ================= */
+
+.listing-cover {
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+
+.listing-cover > img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: contain;
+
+    background-color: #fff3e6;
+
+}
+
+
+.photo-count {
+
+    position: absolute;
+
+    bottom: 10px;
+
+    right: 10px;
+
+    padding: 6px 10px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    color: white;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+}
+
+
+/* ================= PHOTO GALLERY ================= */
+
+.photo-gallery {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+}
+
+
+.gallery-content {
+
+    max-width: 850px;
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+#gallery-main-image {
+
+    max-width: 100%;
+
+    max-height: 70vh;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+}
+
+
+.close-gallery {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    color: #333;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+.gallery-thumbnails {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.gallery-thumbnail {
+
+    width: 70px;
+
+    height: 85px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 5px;
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+
+}
+
+
+.gallery-thumbnail:hover {
+
+    border-color: #d96b27;
+
+}
+
+/* ================= STATUS ================= */
+
+.listing-status-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.listing-status-box label {
+
+    font-weight: bold;
+
+    color: #302820;
+
+}
+
+
+.status-select {
+
+    padding: 7px 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #302820;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.status-select:focus {
+
+    outline: none;
+
+    border-color: #d96b27;
+
+}

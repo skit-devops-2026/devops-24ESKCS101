@@ -1,0 +1,31 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8081:80"
+
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:1.3.0
+    command: ["--nginx.scrape-uri=http://web:8080/stub_status"]
+    depends_on:
+      - web
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - nginx-exporter
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./monitoring/grafana-datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+      - ./monitoring/grafana-dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yml
+      - ./monitoring/releaf-dashboard.json:/var/lib/grafana/dashboards/releaf-dashboard.json
+    depends_on:
+      - prometheus

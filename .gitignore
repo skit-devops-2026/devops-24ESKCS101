@@ -1,4 +1,16 @@
+# dependencies
 node_modules/
+
+# secrets - never upload your real .env file
+.env
+
+# build output
 dist/
-server/uploads/*
-!server/uploads/.gitkeep
+
+# uploaded and sample book pictures (the folder itself is kept)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# other
+*.log
+.DS_Store

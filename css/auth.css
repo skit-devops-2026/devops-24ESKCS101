@@ -1,0 +1,322 @@
+/* ================= AUTH PAGE ================= */
+
+.auth-page {
+    min-height: calc(100vh - 170px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 20px;
+
+    background-color: #faf7f2;
+}
+
+
+/* ================= AUTH CARD ================= */
+
+.auth-card {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 40px;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    border: 1px solid #eee;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* ================= ICON ================= */
+
+.auth-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #fff3e6;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+}
+
+
+/* ================= HEADING ================= */
+
+.auth-card h1 {
+
+    text-align: center;
+
+    margin: 5px 0 10px;
+
+    color: #302820;
+
+    font-size: 30px;
+
+}
+
+
+.auth-subtitle {
+
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ================= FORM ================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #3b3028;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d8d2cc;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+}
+
+
+.form-group input:focus {
+
+    border-color: #d96b27;
+
+    box-shadow: 0 0 0 3px rgba(217, 107, 39, 0.12);
+
+}
+
+
+/* ================= FORM OPTIONS ================= */
+
+.form-options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+}
+
+
+.remember-me {
+
+    color: #666;
+
+}
+
+
+.remember-me input {
+
+    margin-right: 5px;
+
+}
+
+
+.forgot-password {
+
+    color: #d96b27;
+
+    text-decoration: none;
+
+}
+
+
+.forgot-password:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ================= TERMS ================= */
+
+.terms {
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+
+}
+
+
+.terms input {
+
+    margin-right: 5px;
+
+}
+
+
+.terms a {
+
+    color: #d96b27;
+
+    text-decoration: none;
+
+}
+
+
+/* ================= BUTTON ================= */
+
+.auth-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #d96b27;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.2s;
+
+}
+
+
+.auth-btn:hover {
+
+    background-color: #bd591c;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================= MESSAGE ================= */
+
+.form-message {
+
+    min-height: 20px;
+
+    text-align: center;
+
+    margin: 15px 0 0;
+
+    font-size: 14px;
+
+}
+
+
+/* ================= SWITCH LOGIN / REGISTER ================= */
+
+.switch-auth {
+
+    text-align: center;
+
+    color: #777;
+
+    margin-top: 25px;
+
+    font-size: 14px;
+
+}
+
+
+.switch-auth a {
+
+    color: #d96b27;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.switch-auth a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .auth-card {
+
+        padding: 30px 22px;
+
+    }
+
+    .auth-card h1 {
+
+        font-size: 26px;
+
+    }
+
+}

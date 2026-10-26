@@ -1,0 +1,16 @@
+.git
+.github
+node_modules
+tests
+docs
+k8s
+monitoring
+scripts
+Jenkinsfile
+Makefile
+package.json
+package-lock.json
+README.md
+Dockerfile
+docker-compose.yml
+*.zip
