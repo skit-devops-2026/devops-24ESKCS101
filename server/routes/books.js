@@ -6,7 +6,7 @@ const Book = require("../models/Book");
 
 const router = express.Router();
 
-// ================= IMAGE UPLOAD SETTINGS =================
+
 const uploadFolder = path.join(__dirname, "..", "uploads");
 if (!fs.existsSync(uploadFolder)) {
     fs.mkdirSync(uploadFolder);
@@ -29,8 +29,8 @@ const upload = multer({
     }
 });
 
-// ================= GET ALL BOOKS FOR SALE (home page) =================
-// GET /api/books   -> newest first
+
+
 router.get("/", async function (req, res) {
     try {
         const books = await Book.find({ status: "listed" })
@@ -43,8 +43,8 @@ router.get("/", async function (req, res) {
     }
 });
 
-// ================= GET ONE USER'S BOOKS (profile page) =================
-// GET /api/books/user/:userId   -> every book of this user (listed, sold, deleted)
+
+
 router.get("/user/:userId", async function (req, res) {
     try {
         const books = await Book.find({ seller: req.params.userId }).sort({ createdAt: -1 });
@@ -54,8 +54,8 @@ router.get("/user/:userId", async function (req, res) {
     }
 });
 
-// ================= LIST A NEW BOOK =================
-// POST /api/books   form-data: image, title, author, price, contact, userId
+
+
 router.post("/", upload.single("image"), async function (req, res) {
     try {
         const { title, author, price, contact, userId } = req.body;
@@ -82,8 +82,8 @@ router.post("/", upload.single("image"), async function (req, res) {
     }
 });
 
-// ================= UPDATE A BOOK =================
-// PUT /api/books/:id   form-data: title, author, price, contact, userId, image (optional)
+
+
 router.put("/:id", upload.single("image"), async function (req, res) {
     try {
         const book = await Book.findById(req.params.id);
@@ -111,8 +111,9 @@ router.put("/:id", upload.single("image"), async function (req, res) {
     }
 });
 
-// ================= MARK AS SOLD =================
-// PUT /api/books/:id/sold   body: { userId }
+
+
+
 router.put("/:id/sold", async function (req, res) {
     try {
         const book = await Book.findById(req.params.id);
@@ -132,9 +133,9 @@ router.put("/:id/sold", async function (req, res) {
     }
 });
 
-// ================= DELETE FROM LISTING =================
-// DELETE /api/books/:id?userId=...
-// The book is not erased. Its status becomes "deleted" so the profile page can count it.
+
+
+
 router.delete("/:id", async function (req, res) {
     try {
         const book = await Book.findById(req.params.id);

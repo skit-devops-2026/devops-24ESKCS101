@@ -9,8 +9,7 @@ function Home({ setUser }) {
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(true);
 
-    // Runs once when the page loads (and again on every refresh),
-    // so the list always shows the newest books first.
+    
     useEffect(function () {
         axios
             .get("/api/books")
@@ -23,7 +22,7 @@ function Home({ setUser }) {
             });
     }, []);
 
-    // Search by book name
+    
     const filteredBooks = books.filter(function (book) {
         return book.title.toLowerCase().includes(search.toLowerCase().trim());
     });
@@ -66,7 +65,7 @@ function Home({ setUser }) {
 
                 <section className="browse-section">
 
-                    {/* SECTION HEADING */}
+                    
 
                     <div className="section-title">
 
@@ -89,7 +88,7 @@ function Home({ setUser }) {
                     </div>
 
 
-                    {/* ================= SEARCH ================= */}
+                    
 
                     <div className="search-area">
 
@@ -111,7 +110,7 @@ function Home({ setUser }) {
                     </div>
 
 
-                    {/* ================= BOOK GRID ================= */}
+                    
 
                     <div className="books-grid">
 
@@ -157,7 +156,7 @@ function Home({ setUser }) {
                     </div>
 
 
-                    {/* ================= NO RESULTS ================= */}
+                    
 
                     {!loading && filteredBooks.length === 0 && (
                         <div className="no-results">
