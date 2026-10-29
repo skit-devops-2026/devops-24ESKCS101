@@ -8,7 +8,7 @@ import "../css/profile.css";
 function Profile({ user, setUser }) {
     const [books, setBooks] = useState([]);
 
-    // Edit mode: which book is being edited, and its new values
+    
     const [editId, setEditId] = useState(null);
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
@@ -16,7 +16,7 @@ function Profile({ user, setUser }) {
     const [contact, setContact] = useState("");
     const [newImage, setNewImage] = useState(null);
 
-    // ================= LOAD ALL BOOKS OF THIS USER =================
+    
     function loadBooks() {
         axios
             .get("/api/books/user/" + user._id)
@@ -29,14 +29,14 @@ function Profile({ user, setUser }) {
         loadBooks();
     }, []);
 
-    // ================= NUMBERS FOR THE STAT CARDS =================
+    
     const listedBooks = books.filter((book) => book.status === "listed");
     const soldBooks = books.filter((book) => book.status === "sold");
     const deletedBooks = books.filter((book) => book.status === "deleted");
 
     const profit = soldBooks.reduce((total, book) => total + book.price, 0);
 
-    // ================= EDIT =================
+    
     function startEdit(book) {
         setEditId(book._id);
         setTitle(book.title);
@@ -66,7 +66,7 @@ function Profile({ user, setUser }) {
         loadBooks();
     }
 
-    // ================= MARK AS SOLD =================
+    
     async function markSold(id) {
         if (!window.confirm("Mark this book as sold?")) return;
 
@@ -74,7 +74,7 @@ function Profile({ user, setUser }) {
         loadBooks();
     }
 
-    // ================= DELETE =================
+    
     async function deleteBook(id) {
         if (!window.confirm("Remove this book from your listings?")) return;
 
@@ -88,7 +88,7 @@ function Profile({ user, setUser }) {
 
         <div className="profile-page">
 
-            {/* ================= PAGE HEADER ================= */}
+
 
             <section className="page-header">
 
@@ -109,7 +109,7 @@ function Profile({ user, setUser }) {
 
             <main className="profile-section">
 
-                {/* ================= STATISTICS ================= */}
+
 
                 <div className="stats-container">
 
@@ -156,7 +156,7 @@ function Profile({ user, setUser }) {
                 </div>
 
 
-                {/* ================= LISTINGS HEADER ================= */}
+
 
                 <div className="listings-top">
 
@@ -179,7 +179,7 @@ function Profile({ user, setUser }) {
                 </div>
 
 
-                {/* ================= MY LISTINGS ================= */}
+
 
                 <div id="listings-container">
 
@@ -203,7 +203,7 @@ function Profile({ user, setUser }) {
 
                     {listedBooks.map(function (book) {
 
-                        // ----- This book is being edited -----
+
                         if (book._id === editId) {
                             return (
                                 <div className="listing-card" key={book._id}>
@@ -276,7 +276,7 @@ function Profile({ user, setUser }) {
                             );
                         }
 
-                        // ----- Normal card -----
+                        
                         return (
                             <div className="listing-card" key={book._id}>
 

@@ -29,10 +29,12 @@ function App() {
                     path="/home"
                     element={user ? <Home setUser={setUser} /> : <Navigate to="/login" />}
                 />
+                
                 <Route
                     path="/sell"
                     element={user ? <Sell user={user} setUser={setUser} /> : <Navigate to="/login" />}
                 />
+
                 <Route
                     path="/profile"
                     element={user ? <Profile user={user} setUser={setUser} /> : <Navigate to="/login" />}

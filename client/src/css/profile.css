@@ -1,14 +1,8 @@
-/* =====================================
-   PROFILE PAGE
-   (page header + stat cards come from sold.css,
-    listing cards come from sell.css of the original)
-===================================== */
-
 .profile-page {
     background: #faf7f2;
 }
 
-/* ================= PAGE HEADER ================= */
+
 
 .profile-page .page-header {
     padding: 55px 9% 50px;
@@ -43,7 +37,7 @@
     margin: 0;
 }
 
-/* ================= MAIN ================= */
+
 
 .profile-page .profile-section {
     width: 86%;
@@ -53,7 +47,7 @@
     min-height: 500px;
 }
 
-/* ================= STATISTICS ================= */
+
 
 .profile-page .stats-container {
     display: grid;
@@ -98,7 +92,7 @@
     margin: 0;
 }
 
-/* ================= LISTINGS HEADER ================= */
+
 
 .profile-page .listings-top {
     display: flex;
@@ -137,7 +131,7 @@
     background-color: #bd591c;
 }
 
-/* ================= LISTINGS ================= */
+
 
 .profile-page #listings-container {
     display: grid;
@@ -191,7 +185,7 @@
     word-break: break-word;
 }
 
-/* ================= LISTING ACTIONS ================= */
+
 
 .profile-page .listing-actions {
     display: flex;
@@ -241,7 +235,7 @@
     background-color: #eee;
 }
 
-/* ================= EDIT FORM (inside a card) ================= */
+
 
 .profile-page .edit-form label {
     display: block;
@@ -269,7 +263,7 @@
     border-color: #d96b27;
 }
 
-/* ================= NO LISTINGS ================= */
+
 
 .profile-page .no-listings {
     grid-column: 1 / -1;
@@ -290,7 +284,7 @@
     margin: 0 0 25px;
 }
 
-/* ================= MOBILE ================= */
+
 
 @media (max-width: 850px) {
 
